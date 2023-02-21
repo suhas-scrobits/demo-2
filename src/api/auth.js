@@ -3,7 +3,7 @@ import axios from "axios";
 const IP = "https://serveeasy-backend-production.up.railway.app";
 
 export async function signUpWithGoogle() {
-  const url = `${IP}/api/v1/user/google`;
+  const url = `${IP}/api/v1/user/google/callback`;
   const res = await fetch(url).then((response) => response.json());
   return res.data;
 }
