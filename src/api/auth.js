@@ -21,7 +21,7 @@ export async function signupWithEmailPassword(body) {
 }
 
 export async function getUserDetails(body) {
-  const url = `https://765d-45-115-59-106.in.ngrok.io/api/v1/user/user`;
+  const url = `${IP}/api/v1/user/user`;
   const res = await axios.get(url, { withCredentials: true });
   return res.data;
 }
