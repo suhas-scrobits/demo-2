@@ -1,37 +1,26 @@
 import { useGoogleLogin } from "@react-oauth/google";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { getUserDetails } from "../api/auth";
 
 function Home() {
-  const [user, setUser] = useState([]);
-  const [profile, setProfile] = useState([]);
-
-  const login = useGoogleLogin({
-    onSuccess: (codeResponse) => setUser(codeResponse),
-    onError: (error) => console.log("Login Failed:", error),
-  });
+  const [user, setUser] = useState("");
 
   useEffect(() => {
-    if (user) {
-      axios
-        .get(
-          `https://www.googleapis.com/oauth2/v1/userinfo?access_token=${user.access_token}`,
-          {
-            headers: {
-              Authorization: `Bearer ${user.access_token}`,
-              Accept: "application/json",
-            },
-          }
-        )
-        .then((res) => {
-          setProfile(res.data);
-        })
-        .catch((err) => console.log(err));
+    try {
+      getUserDetails();
+    } catch (error) {
+      console.log("error from home: ", error);
     }
-  }, [user]);
+  }, []);
 
-  console.log(user);
-
-  return <div className="text-3xl font-bold underline">Home</div>;
+  return (
+    <div className="text-3xl font-bold underline">
+      Home
+      {/* <Link hr>login</Link> */}
+      <a href="/login">login</a>
+    </div>
+  );
 }
 
 export default Home;
