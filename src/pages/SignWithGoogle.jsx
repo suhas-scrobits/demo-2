@@ -66,6 +66,8 @@ function SignWithGoogle() {
     }
   };
 
+  console.log(profile);
+
   return (
     <div>
       <button onClick={handleSignIn}>sign in with google</button>
