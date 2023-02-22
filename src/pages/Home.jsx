@@ -16,9 +16,7 @@ function Home() {
 
   return (
     <div className="text-3xl font-bold underline">
-      Home
-      {/* <Link hr>login</Link> */}
-      <a href="/login">login</a>
+      <Link to={"/login"}>login</Link>
     </div>
   );
 }
