@@ -13,45 +13,46 @@ function SignWithGoogle() {
   const [isSignedIn, setIsSignedIn] = useState(false);
   const [profile, setProfile] = useState(null);
 
-  useEffect(() => {
-    // load the Google API Client Library
-    gapi.load("auth2", () => {
-      // initialize the Google OAuth client
-      gapi.auth2
-        .init({
-          client_id:
-            "334811094063-g29vhtndnefg64on21b6gu96kf5uf11e.apps.googleusercontent.com",
-          scope: "email profile",
-        })
-        .then(() => {
-          // check if the user is already signed in
-          const googleAuth = gapi.auth2.getAuthInstance();
-          setIsSignedIn(googleAuth.isSignedIn.get());
+  // useEffect(() => {
+  //   // load the Google API Client Library
+  //   gapi.load("auth2", () => {
+  //     // initialize the Google OAuth client
+  //     gapi.auth2
+  //       .init({
+  //         client_id:
+  //           "334811094063-g29vhtndnefg64on21b6gu96kf5uf11e.apps.googleusercontent.com",
+  //         scope: "email profile",
+  //       })
+  //       .then(() => {
+  //         // check if the user is already signed in
+  //         const googleAuth = gapi.auth2.getAuthInstance();
+  //         setIsSignedIn(googleAuth.isSignedIn.get());
 
-          // listen for changes to the user's authentication status
-          googleAuth.isSignedIn.listen((isSignedIn) => {
-            setIsSignedIn(isSignedIn);
-            if (isSignedIn) {
-              // get the user's profile information
-              const userProfile = googleAuth.currentUser
-                .get()
-                .getBasicProfile();
-              setProfile({
-                name: userProfile.getName(),
-                email: userProfile.getEmail(),
-              });
-            } else {
-              setProfile(null);
-            }
-          });
-        });
-    });
-  }, []);
+  //         // listen for changes to the user's authentication status
+  //         googleAuth.isSignedIn.listen((isSignedIn) => {
+  //           setIsSignedIn(isSignedIn);
+  //           if (isSignedIn) {
+  //             // get the user's profile information
+  //             const userProfile = googleAuth.currentUser
+  //               .get()
+  //               .getBasicProfile();
+  //             setProfile({
+  //               name: userProfile.getName(),
+  //               email: userProfile.getEmail(),
+  //             });
+  //           } else {
+  //             setProfile(null);
+  //           }
+  //         });
+  //       });
+  //   });
+  // }, []);
 
   const handleSignIn = async () => {
     try {
       // show the Google sign-in popup to the user
-      await gapi.auth2.getAuthInstance().signIn();
+      const data = await gapi.auth2.getAuthInstance().signIn();
+      console.log(data);
     } catch (error) {
       console.error(error);
     }
