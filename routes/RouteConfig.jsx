@@ -9,7 +9,7 @@ function RouteConfig() {
     <>
       <Routes>
         <Route exact path="/" element={<Landing />} />
-        <Route exact path="/Home" element={<Home />} />
+        <Route exact path="/home" element={<Home />} />
         <Route exact path="/login" element={<Login />} />
       </Routes>
     </>
