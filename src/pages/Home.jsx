@@ -6,6 +6,10 @@ import { getUserDetails } from "../api/auth";
 function Home() {
   const [user, setUser] = useState("");
 
+  useEffect(() => {
+    getUserDetails();
+  }, []);
+
   return (
     <div className="text-3xl font-bold underline">Welcome to dashboard</div>
   );

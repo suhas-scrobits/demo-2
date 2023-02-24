@@ -19,8 +19,8 @@ export async function signupWithEmailPassword(body) {
   return res.data;
 }
 
-export async function getUserDetails(body) {
-  const url = `${IP}/api/v1/user/user`;
+export async function getUserDetails() {
+  const url = `${IP}/api/v1/user/details`;
   const res = await axios.get(url, { withCredentials: true });
   return res.data;
 }
