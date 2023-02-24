@@ -8,7 +8,12 @@ function SignWithGoogle() {
   }
   return (
     <div>
-      <button onClick={handleSignGoogle}>sign in with google</button>
+      <button
+        onClick={handleSignGoogle}
+        className="border border-solid border-green-500 w-full py-2 rounded text-red-500"
+      >
+        sign in with google
+      </button>
     </div>
   );
 }

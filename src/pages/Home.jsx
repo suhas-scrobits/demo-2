@@ -6,18 +6,8 @@ import { getUserDetails } from "../api/auth";
 function Home() {
   const [user, setUser] = useState("");
 
-  useEffect(() => {
-    try {
-      getUserDetails();
-    } catch (error) {
-      console.log("error from home: ", error);
-    }
-  }, []);
-
   return (
-    <div className="text-3xl font-bold underline">
-      <Link to={"/login"}>login</Link>
-    </div>
+    <div className="text-3xl font-bold underline">Welcome to dashboard</div>
   );
 }
 

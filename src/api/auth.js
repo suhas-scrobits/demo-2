@@ -3,7 +3,6 @@ import axios from "axios";
 const IP = "https://serveeasy-backend-production.up.railway.app";
 
 export async function signUpWithGoogle() {
-  console.log("suhas");
   const url = `${IP}/api/v1/user/google`;
   window.open(url, "_self");
 }
