@@ -11,7 +11,11 @@ function Home() {
   }, []);
 
   return (
-    <div className="text-3xl font-bold underline">Welcome to dashboard</div>
+    <div className="text-3xl font-bold underline w-full h-screen flex justify-center items-center text-red-500">
+      <p className="p-8 border-2 border-solid border-yellow-400">
+        Welcome to Dashboard
+      </p>
+    </div>
   );
 }
 

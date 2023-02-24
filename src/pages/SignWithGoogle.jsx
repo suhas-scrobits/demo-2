@@ -12,7 +12,7 @@ function SignWithGoogle() {
         onClick={handleSignGoogle}
         className="border border-solid border-green-500 w-full py-2 rounded text-red-500"
       >
-        sign in with google
+        Sign in with Google
       </button>
     </div>
   );
