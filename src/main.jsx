@@ -9,13 +9,11 @@ import Landing from "./pages/Landing";
 import Login from "./pages/Login";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route exact path="/" element={<Landing />} />
-        <Route exact path="/login" element={<Login />} />
-        <Route exact path="/home" element={<Home />} />
-      </Routes>
-    </BrowserRouter>
-  </React.StrictMode>
+  <BrowserRouter>
+    <Routes>
+      <Route exact path="/" element={<Landing />} />
+      <Route exact path="/login" element={<Login />} />
+      <Route exact path="/home" element={<Home />} />
+    </Routes>
+  </BrowserRouter>
 );
