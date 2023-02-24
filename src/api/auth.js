@@ -1,9 +1,11 @@
 import axios from "axios";
 
-const IP = "https://serveeasy-backend-production.up.railway.app";
+// const IP = "https://serveeasy-backend-production.up.railway.app";
+const IP = "https://51d3-116-74-159-228.in.ngrok.io";
 
 export async function signUpWithGoogle() {
   const url = `${IP}/api/v1/user/google`;
+  console.log(url);
   window.open(url, "_self");
 }
 

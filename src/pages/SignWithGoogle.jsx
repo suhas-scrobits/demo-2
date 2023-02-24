@@ -4,7 +4,7 @@ import { signUpWithGoogle } from "../api/auth";
 
 function SignWithGoogle() {
   function handleSignGoogle() {
-    signUpWithGoogle().then((res) => console.log(res));
+    signUpWithGoogle();
   }
   return (
     <div>
