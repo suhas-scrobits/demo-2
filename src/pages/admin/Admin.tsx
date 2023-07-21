@@ -1,8 +1,8 @@
 
-import CrowLogo from "../../assets/CrowLogo.svg";
-import HeroImage from "../../assets/HeroImage.png";
-import Login from "../../components/login/Login";
-import "../../styles/AdminPage.css"; // Import the CSS for the split-screen layout if needed.
+import CrowLogo from "./../../assets/CrowLogo.svg";
+import HeroImage from "./../../assets/HeroImage.png";
+import Login from "./../../components/login/Login";
+import "./../../styles/AdminPage.css"; // Import the CSS for the split-screen layout if needed.
 
 function Admin() {
   return (

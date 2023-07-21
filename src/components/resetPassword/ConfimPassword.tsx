@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import "../../styles/Admin.css";
+import "./../../styles/Admin.css";
 import { EyeInvisibleOutlined, EyeOutlined } from "@ant-design/icons";
 
 import { useNavigate } from 'react-router-dom';
@@ -17,7 +17,7 @@ interface LoginProps {
   redirect: string;
 }
 
-function ConfirmPassword({  showForgotPassword, redirect}: LoginProps) {
+function ConfirmPassword({ redirect}: LoginProps) {
   const navigate = useNavigate(); // The useHistory hook gives you access to the history instance that you may use to navigate.
   const {
     register,
@@ -76,11 +76,7 @@ function ConfirmPassword({  showForgotPassword, redirect}: LoginProps) {
       {errors?.Password?.type === "required" && (
         <p className="LoginWarning">Field Missing</p>
       )}
-      {showForgotPassword && (
-        <div className="ForgotPassword">
-          <a href="/EmailOtp">Forgot Password?</a>
-          </div>
-          )}
+     
 
 <div className="PasswordInput">
         <label>Password</label>
@@ -108,11 +104,7 @@ function ConfirmPassword({  showForgotPassword, redirect}: LoginProps) {
       {errors?.Password?.type === "required" && (
         <p className="LoginWarning">Field Missing</p>
       )}
-      {showForgotPassword && (
-        <div className="ForgotPassword">
-          <a href="/EmailOtp">Forgot Password?</a>
-          </div>
-          )}
+      
       <input type="Submit" value="Login" />
     </form>
   );

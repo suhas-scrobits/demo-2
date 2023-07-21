@@ -1,5 +1,5 @@
-import CrowLogo from "../../assets/CrowLogo.svg";
-import HeroImage from "../../assets/HeroImage.png";
+import CrowLogo from "./../../assets/CrowLogo.svg";
+import HeroImage from "./../../assets/HeroImage.png";
 import "../../styles/AdminPage.css"; // Import the CSS for the split-screen layout if needed.
 import EnterOtp from "../../components/resetPassword/EnterOtp";
 // import { useState } from "react";
