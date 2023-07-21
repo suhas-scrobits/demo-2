@@ -1,5 +1,4 @@
-
-import CrowLogo from "./../../assets/CrowLogo.svg";
+import logo from "./../../assets/logo.svg";
 import HeroImage from "./../../assets/HeroImage.png";
 import EmailForm from "./../../components/resetPassword/EmailForm";
 import "./../../styles/AdminPage.css"; // Import the CSS for the split-screen layout if needed.
@@ -21,7 +20,7 @@ function AddEmail() {
       </div>
       <div className="right-half">
         <div className="top-right">
-          <img src={CrowLogo} alt="Hero Image" />
+          <img src={logo} alt="Hero Image" />
 
           <text className="text3">Admin Login</text>
           <text className="text4">Please enter your credentials below</text>

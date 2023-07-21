@@ -3,7 +3,7 @@ import { useState } from "react";
 import "../../styles/Admin.css";
 import { EyeInvisibleOutlined, EyeOutlined } from "@ant-design/icons";
 
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 interface IFormInput {
   Email: string;
@@ -16,7 +16,7 @@ interface LoginProps {
   redirect: string;
 }
 
-function Login({  showForgotPassword, redirect}: LoginProps) {
+function Login({ showForgotPassword, redirect }: LoginProps) {
   const navigate = useNavigate(); // The useHistory hook gives you access to the history instance that you may use to navigate.
   const {
     register,
@@ -47,7 +47,7 @@ function Login({  showForgotPassword, redirect}: LoginProps) {
   console.log(watch("example")); // you can watch individual input by pass the name of the input
 
   return (
-    <form className="adminloginForm" onSubmit={handleSubmit(onSubmit)}>
+    <form className="adminloginForm" onSubmit={() => handleSubmit(onSubmit)}>
       <div className="EmailInput">
         <label>Email</label>
         <input
@@ -66,7 +66,7 @@ function Login({  showForgotPassword, redirect}: LoginProps) {
         <p className="LoginWarning">Valid Email only</p>
       )}
 
-<div className="PasswordInput">
+      <div className="PasswordInput">
         <label>Password</label>
         <div style={{ position: "relative" }}>
           <input
@@ -85,7 +85,7 @@ function Login({  showForgotPassword, redirect}: LoginProps) {
             }}
             onClick={togglePasswordVisibility}
           >
-            {showPassword ? <EyeInvisibleOutlined/> : <EyeOutlined />}
+            {showPassword ? <EyeInvisibleOutlined /> : <EyeOutlined />}
           </span>
         </div>
       </div>
@@ -95,12 +95,11 @@ function Login({  showForgotPassword, redirect}: LoginProps) {
       {showForgotPassword && (
         <div className="ForgotPassword">
           <a href="/EmailOtp">Forgot Password?</a>
-          </div>
-          )}
+        </div>
+      )}
       <input type="Submit" value="Login" />
     </form>
   );
-
 }
 
 export default Login;

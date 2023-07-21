@@ -1,8 +1,7 @@
-
-import CrowLogo from "./../../assets/CrowLogo.svg";
+import logo from "./../../assets/logo.svg";
 import HeroImage from "./../../assets/HeroImage.png";
 import Login from "./../../components/login/Login";
-import "./../../styles/AdminPage.css"; // Import the CSS for the split-screen layout if needed.
+import "./../../styles/adminPage.css"; // Import the CSS for the split-screen layout if needed.
 
 function Admin() {
   return (
@@ -21,12 +20,12 @@ function Admin() {
       </div>
       <div className="right-half">
         <div className="top-right">
-          <img src={CrowLogo} alt="Hero Image" />
+          <img src={logo} alt="Hero Image" />
 
           <text className="text3">Admin Login</text>
           <text className="text4">Please enter your credentials below</text>
         </div>
-        <Login showForgotPassword={false} redirect="Admin"/>
+        <Login showForgotPassword={false} redirect="Admin" />
       </div>
     </div>
   );

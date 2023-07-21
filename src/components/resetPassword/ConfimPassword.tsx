@@ -3,8 +3,7 @@ import { useState } from "react";
 import "./../../styles/Admin.css";
 import { EyeInvisibleOutlined, EyeOutlined } from "@ant-design/icons";
 
-import { useNavigate } from 'react-router-dom';
-
+import { useNavigate } from "react-router-dom";
 
 interface IFormInput {
   Email: string;
@@ -17,7 +16,7 @@ interface LoginProps {
   redirect: string;
 }
 
-function ConfirmPassword({ redirect}: LoginProps) {
+function ConfirmPassword({ redirect }: LoginProps) {
   const navigate = useNavigate(); // The useHistory hook gives you access to the history instance that you may use to navigate.
   const {
     register,
@@ -48,9 +47,8 @@ function ConfirmPassword({ redirect}: LoginProps) {
   console.log(watch("example")); // you can watch individual input by pass the name of the input
 
   return (
-    <form className="adminloginForm" onSubmit={handleSubmit(onSubmit)}>
-      
-<div className="PasswordInput">
+    <form className="adminloginForm" onSubmit={() => handleSubmit(onSubmit)}>
+      <div className="PasswordInput">
         <label>Password</label>
         <div style={{ position: "relative" }}>
           <input
@@ -69,16 +67,15 @@ function ConfirmPassword({ redirect}: LoginProps) {
             }}
             onClick={togglePasswordVisibility}
           >
-            {showPassword ? <EyeInvisibleOutlined/> : <EyeOutlined />}
+            {showPassword ? <EyeInvisibleOutlined /> : <EyeOutlined />}
           </span>
         </div>
       </div>
       {errors?.Password?.type === "required" && (
         <p className="LoginWarning">Field Missing</p>
       )}
-     
 
-<div className="PasswordInput">
+      <div className="PasswordInput">
         <label>Password</label>
         <div style={{ position: "relative" }}>
           <input
@@ -97,18 +94,17 @@ function ConfirmPassword({ redirect}: LoginProps) {
             }}
             onClick={togglePasswordVisibility}
           >
-            {showPassword ? <EyeInvisibleOutlined/> : <EyeOutlined />}
+            {showPassword ? <EyeInvisibleOutlined /> : <EyeOutlined />}
           </span>
         </div>
       </div>
       {errors?.Password?.type === "required" && (
         <p className="LoginWarning">Field Missing</p>
       )}
-      
+
       <input type="Submit" value="Login" />
     </form>
   );
-
 }
 
 export default ConfirmPassword;

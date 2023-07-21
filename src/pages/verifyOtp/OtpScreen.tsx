@@ -1,4 +1,4 @@
-import CrowLogo from "./../../assets/CrowLogo.svg";
+import logo from "./../../assets/logo.svg";
 import HeroImage from "./../../assets/HeroImage.png";
 import "../../styles/AdminPage.css"; // Import the CSS for the split-screen layout if needed.
 import EnterOtp from "../../components/resetPassword/EnterOtp";
@@ -6,18 +6,14 @@ import EnterOtp from "../../components/resetPassword/EnterOtp";
 import { useForm, Controller } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
-interface OtpScreenProps {
-  // Add any props if needed for OtpScreen component
-}
-
 interface OtpFormData {
   otp: string; // Add the 'otp' field to the form data interface
 }
 
-const OtpScreen: React.FC<OtpScreenProps> = () => {
+const OtpScreen = () => {
   // const [otp, setOtp] = useState<string>("");
   // const [, setOtp] = useState<string>("");
-  
+
   const {
     control,
     handleSubmit,
@@ -63,10 +59,10 @@ const OtpScreen: React.FC<OtpScreenProps> = () => {
       <div className="right-half">
         <div className="top-right">
           {/* Right-half content */}
-          <img src={CrowLogo} alt="Hero Image" />
+          <img src={logo} alt="Hero Image" />
           <text className="text3">Admin Login</text>
           <text className="text4">Please enter your credentials below</text>
-          <form onSubmit={handleSubmit(onSubmit)}>
+          <form onSubmit={() => handleSubmit(onSubmit)}>
             <Controller
               name="otp"
               control={control}

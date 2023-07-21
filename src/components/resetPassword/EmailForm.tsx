@@ -2,14 +2,11 @@ import { useForm } from "react-hook-form";
 
 import "../../styles/Admin.css";
 
-
-
 import { useNavigate } from "react-router-dom";
-
 
 interface IFormInput {
   Email: string;
-  
+
   example: string;
 }
 
@@ -21,7 +18,7 @@ function EmailForm() {
     formState: { errors },
   } = useForm<IFormInput>();
   //password  Visibility
- 
+
   const navigate = useNavigate();
   const onSubmit = (data: IFormInput) => {
     alert(JSON.stringify(data));
@@ -31,7 +28,7 @@ function EmailForm() {
   console.log(watch("example")); // you can watch individual input by pass the name of the input
 
   return (
-    <form className="adminloginForm" onSubmit={handleSubmit(onSubmit)}>
+    <form className="adminloginForm" onSubmit={() => handleSubmit(onSubmit)}>
       <div className="EmailInput">
         <label>Email</label>
         <input
@@ -50,11 +47,9 @@ function EmailForm() {
         <p className="LoginWarning">Valid Email only</p>
       )}
 
-
       <input type="Submit" value="Send Code" />
     </form>
   );
-
 }
 
 export default EmailForm;
