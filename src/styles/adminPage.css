@@ -1,0 +1,157 @@
+/* Default styles for larger screens */
+.split-screen-container {
+    display: flex;
+}
+
+.left-half {
+    flex: 1;
+    max-width: 50%;
+    padding-left: 120px;
+    padding-top: 3%;
+}
+
+.left-half img {
+    width: 589px;
+    height: 590px;
+}
+
+.right-half {
+    max-width: 440px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: 120px;
+    width: 100%;
+    
+}
+
+.left-top-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.left-top-text .text1 {
+    color: #3F3F3F;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+}
+
+.CrowSensor {
+    color: #FBA932 !important;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 110%;
+}
+
+.text2 {
+    color: #3F3F3F;
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+}
+
+.top-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+ img {
+    
+    flex-shrink: 0;
+    padding-bottom: 20px;
+}
+
+.text3 {
+    color: #3F3F3F;
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 110%; 
+}
+.text4 {
+    color: #74788D;
+font-family: Poppins;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+} 
+.top-right{
+    padding-bottom: 5%;
+}
+.submitButton{
+    background: #FBA932;
+    color: white;
+    width: 100%;
+  
+   
+    border: none;
+    margin-top: 40px;
+  
+    font-size: 16px;
+    font-weight: 100;
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+.submitButton:active{
+    transition: 0.3s all;
+  transform: translateY(3px);
+  border: 1px solid transparent;
+  opacity: 0.8;
+
+}
+/* Add styles for desktop screens */
+/* @media (min-width: 768px) {
+    .split-screen-container {
+        flex-wrap: wrap;
+    }
+
+    .left-half {
+        padding-top: 64px;
+    }
+
+    .left-half img {
+        width: 100%;
+        max-width: 589px;
+        height: auto;
+    }
+
+    .right-half {
+        padding-right: 0
+    }
+}
+/*  */
+
+/* Add styles for mobile screens 
+
+  @media (max-width: 767px) {
+    .split-screen-container {
+      flex-direction: column-reverse; 
+      align-items: center;
+    }
+  
+    .left-half,
+    .right-half {
+      max-width: 100%;
+      padding: 0;
+    }
+  
+    .left-half img {
+      width: 100%;
+      max-width: none; 
+      height: auto;
+    }
+  }
+  */

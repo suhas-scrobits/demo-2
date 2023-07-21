@@ -1,0 +1,16 @@
+.contact-form {
+  width: 60%;
+  margin-left: 20%;
+  padding: 2%;
+}
+.contact-form input {
+  margin-top: 2%;
+}
+.contact-form button {
+  width: 30%;
+  /* margin-left: 25vh; */
+  margin-top: 2%;
+}
+.contact-container-header {
+  text-align: center;
+}
