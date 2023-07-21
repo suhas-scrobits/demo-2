@@ -1,7 +1,7 @@
 import logo from "./../../assets/logo.svg";
 import HeroImage from "./../../assets/HeroImage.png";
 import EmailForm from "./../../components/resetPassword/EmailForm";
-import "./../../styles/AdminPage.css"; // Import the CSS for the split-screen layout if needed.
+import "./../../styles/adminPage.css"; // Import the CSS for the split-screen layout if needed.
 
 function AddEmail() {
   return (

@@ -1,6 +1,6 @@
 import logo from "./../../assets/logo.svg";
 import HeroImage from "./../../assets/HeroImage.png";
-import "../../styles/AdminPage.css"; // Import the CSS for the split-screen layout if needed.
+import "../../styles/adminPage.css"; // Import the CSS for the split-screen layout if needed.
 import EnterOtp from "../../components/resetPassword/EnterOtp";
 // import { useState } from "react";
 import { useForm, Controller } from "react-hook-form";

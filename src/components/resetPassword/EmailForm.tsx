@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 
-import "../../styles/Admin.css";
+import "../../styles/admin.css";
 
 import { useNavigate } from "react-router-dom";
 

@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import "../../styles/Admin.css";
+import "../../styles/admin.css";
 import { EyeInvisibleOutlined, EyeOutlined } from "@ant-design/icons";
 
 import { useNavigate } from "react-router-dom";
