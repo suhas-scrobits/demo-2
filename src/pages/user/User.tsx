@@ -1,7 +1,7 @@
 import logo from "./../../assets/logo.svg";
 import HeroImage from "./../../assets/HeroImage.png";
 import Login from "./../../components/login/Login.tsx";
-import "./../../styles/AdminPage.css"; // Import the CSS for the split-screen
+import "./../../styles/adminPage.css"; // Import the CSS for the split-screen
 import { Divider } from "antd";
 
 function User() {
