@@ -12,6 +12,8 @@ import User from "../pages/user/User";
 import Dashboard from "../components/dashboard/Dashboard";
 import AddEmail from "../pages/verifyOtp/AddEmail";
 import OtpScreen from "../pages/verifyOtp/OtpScreen";
+
+import ConfirmPass from "../pages/verifyOtp/ConfirmPass";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 
@@ -53,6 +55,10 @@ const router = createBrowserRouter([
   {
     path:"/enterOTP",
     element: <OtpScreen/>
+  },
+  {
+    path: "/confirmPassword",
+    element: <ConfirmPass />
   }
   
 ]);

@@ -1,15 +1,13 @@
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import "../../styles/admin.css";
+import "./../../styles/Admin.css";
 import { EyeInvisibleOutlined, EyeOutlined } from "@ant-design/icons";
-
+import callLoginApi from "../../backend/login-backend";
 import { useNavigate } from "react-router-dom";
 
 interface IFormInput {
-  Email: string;
-  Password: string;
-  age: number;
-  example: string;
+  email: string;
+  password: string;
 }
 interface LoginProps {
   showForgotPassword: boolean;
@@ -21,7 +19,7 @@ function Login({ showForgotPassword, redirect }: LoginProps) {
   const {
     register,
     handleSubmit,
-    watch,
+    
     formState: { errors },
   } = useForm<IFormInput>();
   //password  Visibility
@@ -30,39 +28,46 @@ function Login({ showForgotPassword, redirect }: LoginProps) {
     setShowPassword((prevShowPassword) => !prevShowPassword);
   };
 
-  const onSubmit = (data: IFormInput) => {
-    alert(JSON.stringify(data));
-    console.log(redirect);
-    if (redirect === "Admin") {
-      // Redirect to the admin page if 'redirect' prop is 'admin'
-      navigate("/Dashboard");
-      console.log("admin");
-    } else if (redirect === "User") {
-      // Redirect to the user page if 'redirect' prop is 'user'
-      navigate("/Dashboard");
-      console.log("user");
+  const onSubmit = async (body: IFormInput) => {
+    alert(JSON.stringify(body));
+
+    // Backend call
+    try {
+      const response = await callLoginApi(body);
+      console.log(response);
+      if (redirect === "Admin") {
+        // Redirect to the admin page if 'redirect' prop is 'admin'
+        navigate("/Dashboard");
+        console.log("admin");
+      } else if (redirect === "User") {
+        // Redirect to the user page if 'redirect' prop is 'user'
+        navigate("/Dashboard");
+        console.log("user");
+      }
+    } catch (error: any) {
+      console.log(error.message);
     }
   }; // your form submit function which will invoke after successful validation
 
-  console.log(watch("example")); // you can watch individual input by pass the name of the input
+  // you can watch individual input by pass the name of the input
 
   return (
-    <form className="adminloginForm" onSubmit={() => handleSubmit(onSubmit)}>
+    <form className="adminloginForm" onSubmit={handleSubmit(onSubmit)}>
       <div className="EmailInput">
         <label>Email</label>
         <input
-          {...register("Email", {
+          {...register("email", {
             required: true,
             pattern: /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/i,
           })}
-          className={errors?.Email && "LoginWarning"}
+          className={errors?.email && "LoginWarning"}
           placeholder="Enter your email"
         />
       </div>
-      {errors?.Email?.type === "required" && (
+      {errors?.email?.type === "required" && (
         <p className="LoginWarning">This field is required</p>
       )}
-      {errors?.Email?.type === "pattern" && (
+      {errors?.email?.type === "pattern" && (
         <p className="LoginWarning">Valid Email only</p>
       )}
 
@@ -71,8 +76,8 @@ function Login({ showForgotPassword, redirect }: LoginProps) {
         <div style={{ position: "relative" }}>
           <input
             type={showPassword ? "text" : "password"}
-            {...register("Password", { required: true })}
-            className={errors?.Password && "LoginWarning"}
+            {...register("password", { required: true })}
+            className={errors?.password && "LoginWarning"}
             placeholder="********"
           />
           <span
@@ -89,7 +94,7 @@ function Login({ showForgotPassword, redirect }: LoginProps) {
           </span>
         </div>
       </div>
-      {errors?.Password?.type === "required" && (
+      {errors?.password?.type === "required" && (
         <p className="LoginWarning">Field Missing</p>
       )}
       {showForgotPassword && (

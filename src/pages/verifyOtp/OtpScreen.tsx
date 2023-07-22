@@ -1,19 +1,27 @@
-import logo from "./../../assets/logo.svg";
-import HeroImage from "./../../assets/HeroImage.png";
-import "../../styles/adminPage.css"; // Import the CSS for the split-screen layout if needed.
-import EnterOtp from "../../components/resetPassword/EnterOtp";
+import CrowLogo from "./../../assets/logo.svg";
+import HeroImage from "../../assets/HeroImage.png";
+import "../../styles/AdminPage.css"; // Import the CSS for the split-screen layout if needed.
+
 // import { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import callverifyOtpApi from '../../backend/verifyOtp-backend'
+import EnterOtp from "../../components/resetPassword/EnterOtp";
+interface OtpScreenProps {
+  // Add any props if needed for OtpScreen component
+}
 
 interface OtpFormData {
   otp: string; // Add the 'otp' field to the form data interface
 }
 
-const OtpScreen = () => {
-  // const [otp, setOtp] = useState<string>("");
-  // const [, setOtp] = useState<string>("");
+interface apiBodyType{
+  email: string
+  otp: string
+}
 
+const OtpScreen: React.FC<OtpScreenProps> = () => {
+  // const [otp, setOtp] = useState<string>("");
   const {
     control,
     handleSubmit,
@@ -26,20 +34,46 @@ const OtpScreen = () => {
   //   setOtp(value);
   // };
 
-  const onSubmit = (data: { otp: any }) => {
+  const onSubmit = async(data: { otp: any }) => {
     //OTP handling
 
-    setTimeout(() => {
-      if (data.otp !== "123456") {
-        setError("otp", {
-          type: "manual",
-          message: "Wrong OTP",
-        });
-      } else {
-        console.log("OTP submitted:", data.otp);
-        navigate("/userLogin");
-      }
-    }, 1000);
+    // Calling Backend
+
+    const userEmail = sessionStorage.getItem('email');
+
+    const body : apiBodyType = {
+      email: userEmail || '',
+      otp: data.otp
+    }
+
+    console.log(body);
+    
+    
+    try{
+      const response = await callverifyOtpApi(body)
+      console.log(response);
+      sessionStorage.setItem('otp', data.otp);
+      navigate("/userLogin");
+    }
+    catch(err){
+      console.log((err as Error).message);
+      setError("otp", {
+        type: "manual",
+        message: "Wrong OTP",
+      });
+    }
+
+    // setTimeout(() => {
+    //   if (data.otp !== "123456") {
+    //     setError("otp", {
+    //       type: "manual",
+    //       message: "Wrong OTP",
+    //     });
+    //   } else {
+    //     console.log("OTP submitted:", data.otp);
+    //     navigate("/userLogin");
+    //   }
+    // }, 1000);
   };
 
   return (
@@ -59,10 +93,10 @@ const OtpScreen = () => {
       <div className="right-half">
         <div className="top-right">
           {/* Right-half content */}
-          <img src={logo} alt="Hero Image" />
+          <img src={CrowLogo} alt="Hero Image" />
           <text className="text3">Admin Login</text>
           <text className="text4">Please enter your credentials below</text>
-          <form onSubmit={() => handleSubmit(onSubmit)}>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <Controller
               name="otp"
               control={control}
