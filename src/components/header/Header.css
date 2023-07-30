@@ -1,0 +1,59 @@
+.header-container {
+  border-bottom: 0.5px solid rgba(116, 120, 141, 0.5);
+  position: sticky;
+  top: 0;
+  height: 54px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.logo {
+  color: var(--btn-primary, #fba932);
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%; /* 22px */
+}
+
+.left-parent-div,
+.right-parent-div,
+.pic-and-dropdown {
+  display: flex;
+  align-items: center;
+}
+
+.right-parent-div {
+  gap: 24px;
+}
+
+.left-parent-childs.active {
+  background: var(
+    --btn-primary,
+    #fba932
+  ); /* Add the desired background color for the active menu item */
+}
+
+.menu,
+.bell-icon {
+  margin: 10px;
+}
+
+.left-side {
+  position: fixed;
+
+  /* right: -180px; Sidebar initially off the screen */
+  left: -50%;
+  background-color: #f0f0f0;
+  transition: left 0.5s ease;
+}
+.left-side.open {
+  left: 0; /* Slide the sidebar into view */
+}
+
+.tablecontent {
+  width: fit-content;
+}
