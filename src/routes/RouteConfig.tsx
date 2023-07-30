@@ -11,7 +11,7 @@ import Admin from "../pages/admin/Admin";
 import User from "../pages/user/User";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Dashboard from "../pages/dashboard/Dashboard";
-import SetPassword from "../pages/setPassword/SetPassword";
+import SetPassword from "../pages/set-password/SetPassword";
 
 /**
  * React Router 6.4 Version

@@ -1,5 +1,5 @@
 import logo from "./../../assets/logo.svg";
-import HeroImage from "./../../assets/HeroImage.png";
+import HeroImage from "./../../assets/heroImage.png";
 import ConfirmPassword from "../../components/confim-password/ConfimPassword";
 import "./../../styles/adminPage.css"; // Import the CSS for the split-screen layout if needed.
 

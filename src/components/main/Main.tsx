@@ -1,12 +1,12 @@
 // import "../mainContent/Main.css";
 
 import Dashboard from "../dashboard/Dashboard";
-import AllUsers from "../addUser/AllUsers";
-import Gateways from "../Gateways/Gateways"
+import AllUsers from "../add-user/AllUsers";
+import Gateways from "../gateways/Gateways";
 
 interface MainProps {
   isMenuOpen: boolean;
-  activePage: string
+  activePage: string;
 }
 
 const Main: React.FC<MainProps> = ({ isMenuOpen, activePage }) => {
@@ -17,15 +17,9 @@ const Main: React.FC<MainProps> = ({ isMenuOpen, activePage }) => {
       }`}
     >
       <div className="right-side">
-      {
-        activePage === "dashboard" && <Dashboard/>      
-      }
-      {
-        activePage === "gateways" && <Gateways/>
-      }
-      {
-        activePage === "users" && <AllUsers/>
-      }
+        {activePage === "dashboard" && <Dashboard />}
+        {activePage === "gateways" && <Gateways />}
+        {activePage === "users" && <AllUsers />}
       </div>
     </div>
   );
