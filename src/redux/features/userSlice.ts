@@ -15,7 +15,7 @@ const initialState: InitialState = {
   users: [],
   error: "",
 };
-
+/* eslint-disable */
 // Generates pending, fulfilled and rejected action types
 export const fetchUsers = createAsyncThunk("user/fetchUsers", () => {
   return axios

@@ -1,11 +1,11 @@
-
-
 function Home() {
   return (
     <div>
-      Home<br/>
-      <a href="/AdminLogin">Admin login flow</a><br/>
-      <a href="/UserLogin">User login flow</a>
+      Home
+      <br />
+      <a href="/AdminLogin">Admin Login Flow</a>
+      <br />
+      <a href="/UserLogin">User Login Flow</a>
     </div>
   );
 }

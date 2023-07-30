@@ -1,50 +1,35 @@
 body {
   background: var(--textDefault);
-
 }
 
 form {
   max-width: 100%;
-
 }
 
-
-
 .form {
-  background: 1px solid #FAA831;
+  background: 1px solid #faa831;
   max-width: 100%;
   margin: 0 auto;
 }
 
-p {
-  color: #bf1650;
-}
-
 .LoginWarning {
-  color: #E7414C;
+  color: #e7414c;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
-
-
 }
-
-
 
 input {
   display: block;
   box-sizing: border-box;
   width: 100%;
-  border-radius: 4px;
-  border: 1px solid rgba(250, 168, 49, 0.40);
-  padding: 13px 0px;
+  border-radius: px;
+  border: 1px solid rgba(250, 168, 49, 0.4);
+  padding: 13px 72px;
   margin-bottom: 10px;
 
-
-
   font-size: 14px;
-
 }
 
 label {
@@ -61,27 +46,24 @@ label {
 
 input:focus {
   outline: none;
-  border: 1px solid #FBA932;
+  border: 1px solid #fba932;
 }
 
-button[type="submit"],
-input[type="submit"] {
-  background: #FBA932;
+/* button[type="submit"],
+input[type="submit"] */
+.login-btn-admin {
+  background: #fba932;
   color: white;
   width: 100%;
 
   text-transform: uppercase;
   border: none;
   margin-top: 40px;
+  height: 6vh;
 
   font-size: 16px;
   font-weight: 100;
 }
-
-/* button[type="submit"]:hover,
-  input[type="submit"]:hover {
-    background: #bf1650;
-  } */
 
 button[type="submit"]:active,
 input[type="button"]:active,
@@ -103,10 +85,14 @@ input[type="button"]:hover {
 /* button[type="submit"],
   input[type="button"],
   .App {
-    max-width: 600px;
-    margin: 0 auto;
-  }
-   */
+    max-width: 600px;import dashboard from "../../assets/main/dashboard.svg";
+import devices from "../../assets/main/devices.svg";
+import allusers from "../../assets/main/allUsers.svg";
+import events from "../../assets/main/events-and-triggers.svg";
+import predictions from "../../assets/main/predictions.svg";
+import chevron from "../../assets/main/chevron-down.svg";
+import search from "../../assets/main/search.svg";
+import plus from "../../assets/main/plus.svg";
 /* button[type="button"] {
     display: block;
     appearance: none;
@@ -118,9 +104,7 @@ input[type="button"]:hover {
     border-radius: 4px;
   }
    */
-hr {
-  margin-top: 30px;
-}
+
 
 /* button {
     
@@ -135,8 +119,6 @@ hr {
 
 /* New CSS for input field with warning */
 
-
-
 /* input {
     display: block;
     box-sizing: border-box;
@@ -147,7 +129,7 @@ hr {
     margin-bottom: 10px;
     font-size: 14px;
     
-  }
+  }Missing
    */
 label {
   line-height: 2;
@@ -164,9 +146,9 @@ label {
 /* New CSS for input field with warning */
 input.LoginWarning {
   background: rgba(231, 65, 76, 0.06);
-  border: 1px solid rgba(231, 65, 76, 0.80);
-  padding: 14px;
+  border: 1px solid rgba(231, 65, 76, 0.8);
 
+  padding: 13px 72px;
 }
 
 .LoginWarning::before {
@@ -176,18 +158,14 @@ input.LoginWarning {
   margin-right: 8px;
   width: 20px;
   height: 20px;
-
-
 }
 
 .LoginWarning {
-  color: #E7414C;
+  color: #e7414c;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
-
-
 }
 
 /* #EmailIcon{
@@ -227,21 +205,19 @@ input.LoginWarning {
 }
 
 .ForgotPassword a {
-  color: #3F3F3F;
+  color: #3f3f3f;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
-
 }
 
 .bottom-right {
   align-self: center;
-
 }
 
 .bottom-right text {
-  color: var(--secondary-gray, #74788D);
+  color: var(--secondary-gray, #74788d);
   font-family: Poppins;
   font-size: 14px;
   font-style: normal;
@@ -250,7 +226,7 @@ input.LoginWarning {
 }
 
 .bottom-right a {
-  color: var(--btn-primary, #FBA932);
+  color: var(--btn-primary, #fba932);
   font-family: Poppins;
   font-size: 14px;
   font-style: normal;

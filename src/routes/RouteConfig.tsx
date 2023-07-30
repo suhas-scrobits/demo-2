@@ -5,17 +5,13 @@
 // import { Route, Routes } from "react-router-dom";
 
 import About from "../pages/about/About";
-import Contact from "../pages/contact/Contact";
+
 import Home from "../pages/home/Home";
 import Admin from "../pages/admin/Admin";
 import User from "../pages/user/User";
-import Dashboard from "../components/dashboard/Dashboard";
-import AddEmail from "../pages/verifyOtp/AddEmail";
-import OtpScreen from "../pages/verifyOtp/OtpScreen";
-
-import ConfirmPass from "../pages/verifyOtp/ConfirmPass";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
+import Dashboard from "../pages/dashboard/Dashboard";
+import SetPassword from "../pages/setPassword/SetPassword";
 
 /**
  * React Router 6.4 Version
@@ -31,36 +27,24 @@ const router = createBrowserRouter([
     path: "/about",
     element: <About />,
   },
+
   {
-    path: "/contact",
-    element: <Contact />,
-  },
-  {
-    path:"/UserLogin",
+    path: "/UserLogin",
     element: <User />,
   },
   {
-    path:"/AdminLogin",
+    path: "/AdminLogin",
     element: <Admin />,
   },
-  {
-    path:"/Dashboard",
-    element: <Dashboard/>
 
+  {
+    path: "/dashboard",
+    element: <Dashboard />,
   },
   {
-    path:"/emailOtp",
-    element: <AddEmail/>
+    path: "/:email/:token",
+    element: <SetPassword />,
   },
-  {
-    path:"/enterOTP",
-    element: <OtpScreen/>
-  },
-  {
-    path: "/confirmPassword",
-    element: <ConfirmPass />
-  }
-  
 ]);
 
 function RouteConfig() {
@@ -68,7 +52,6 @@ function RouteConfig() {
     <>
       <RouterProvider router={router} />
     </>
-
   );
 }
 

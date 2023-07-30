@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 export const errorHandle = (
   error: any,
   fileName: string,
